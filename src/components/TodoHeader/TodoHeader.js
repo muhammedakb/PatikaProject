@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import styles from './TodoHeader.style';
 
 const TodoHeader = ({ numberOfThingsToDo }) => {
-  console.log('HEADER RENDERING');
   return (
     <View style={styles.container}>
       {numberOfThingsToDo > 0 ? (
@@ -18,18 +18,3 @@ const TodoHeader = ({ numberOfThingsToDo }) => {
 };
 
 export default TodoHeader;
-
-const styles = StyleSheet.create({
-  container: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  text: {
-    color: '#FFA500',
-    fontSize: 28,
-    fontWeight: 'bold',
-  },
-});

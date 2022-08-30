@@ -1,9 +1,9 @@
 import React from 'react';
-import { Alert, Pressable, StyleSheet, Text } from 'react-native';
+import { Alert, Pressable, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import styles from './Todo.style';
 
 const Todo = ({ isCompleted, todo, setTodoCompleted, removeTodo }) => {
-  console.log('TODO RENDERING');
   return (
     <Pressable
       style={[
@@ -39,28 +39,3 @@ Todo.propTypes = {
 };
 
 export default Todo;
-
-const styles = StyleSheet.create({
-  container: {
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 10,
-    height: 40,
-    paddingLeft: 15,
-    backgroundColor: '#7DA453',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    borderRadius: 5,
-  },
-  completed_container: {
-    backgroundColor: '#374750',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  completed_text: {
-    color: '#6d7173',
-    textDecorationLine: 'line-through',
-  },
-});
