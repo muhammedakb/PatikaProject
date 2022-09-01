@@ -55,6 +55,17 @@ const App = () => {
     }
   };
 
+  const editTodo = (todoValue, newValue) => {
+    setTodos(prevState =>
+      prevState.map(todo => {
+        if (todo.todo === todoValue) {
+          todo.todo = newValue;
+        }
+        return todo;
+      }),
+    );
+  };
+
   const removeTodo = todoValue => {
     setTodos(prevState => prevState.filter(({ todo }) => todo !== todoValue));
   };
@@ -63,6 +74,7 @@ const App = () => {
     <Todo
       isCompleted={item.isCompleted}
       todo={item.todo}
+      editTodo={editTodo}
       setTodoCompleted={changeTodoState}
       removeTodo={removeTodo}
     />
