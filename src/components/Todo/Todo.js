@@ -43,10 +43,14 @@ const Todo = ({
   };
 
   return isEdit ? (
-    <View>
+    <View style={styles.input_container}>
       <TextInput
         ref={inputRef}
-        style={styles.container}
+        style={[
+          styles.container,
+          styles.text,
+          isCompleted ? styles.completed_container : null,
+        ]}
         onChangeText={setText}
         value={text}
       />
